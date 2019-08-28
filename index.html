@@ -1,7 +1,7 @@
 <html>
 	<script>
 		function onLoad() {
-			window.addEventListener('beforeunload', () => { 
+			window.addEventListener('beforeunload', (e) => { 
 				console.log('Inner beforeunload fired');
 				e.returnValue = 'x'; 
 				e.preventDefault(); 
