@@ -1,10 +1,15 @@
 <html>
 	<script>
-	  function onLoad() {
-		  window.addEventListener('beforeunload', () => { console.log('Inner beforeunload fired') });
-	  }
+		function onLoad() {
+			window.addEventListener('beforeunload', () => { 
+				console.log('Inner beforeunload fired');
+				e.returnValue = 'x'; 
+				e.preventDefault(); 
+				return 'x'; 
+			});
+		}
 	</script>
 	<body onload="onLoad()">
-	  <p>Some text</p>
+		<p>Some text</p>
 	</body>
 </html>
